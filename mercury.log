@@ -1,0 +1,12 @@
+INFO    2019-12-11 18:04:29,266 [TestNG] com.tour.mercury.runner.CucumberRunner  - Start Test Suite ---> TestLogin
+INFO    2019-12-11 18:04:29,378 [TestNG] com.tour.report.listener.ExtentCucumberFormatter  - Started the Scenario --->  Validate the login scenario with the valid user name and password
+INFO    2019-12-11 18:04:33,292 [TestNG] com.tour.step.definitions.LandingPageSteps  - Completed the step
+INFO    2019-12-11 18:06:01,310 [TestNG] com.tour.report.listener.ExtentCucumberFormatter  - End the Scenario --->  Validate the login scenario with the valid user name and password
+INFO    2019-12-11 18:06:01,310 [TestNG] com.tour.report.listener.ExtentCucumberFormatter  - Started the Scenario --->  Verify the login details with the invalid details
+INFO    2019-12-11 18:06:02,085 [TestNG] com.tour.step.definitions.LandingPageSteps  - Completed the step
+INFO    2019-12-11 18:06:03,949 [TestNG] com.tour.report.listener.ExtentCucumberFormatter  - End the Scenario --->  Verify the login details with the invalid details
+INFO    2019-12-11 18:06:03,949 [TestNG] com.tour.report.listener.ExtentCucumberFormatter  - Started the Scenario --->  Verify the login details with the blank value
+INFO    2019-12-11 18:06:06,503 [TestNG] com.tour.report.listener.ExtentCucumberFormatter  - End the Scenario --->  Verify the login details with the blank value
+INFO    2019-12-11 18:06:06,503 [TestNG] com.tour.mercury.runner.CucumberRunner  - End Test Suite ---> TestLogin
+INFO    2019-12-11 18:06:06,506 [TestNG] com.tour.mercury.runner.CucumberRunner  - Start Test Suite ---> FlightBooking
+INFO    2019-12-11 18:06:06,507 [TestNG] com.tour.report.listener.ExtentCucumberFormatter  - Started the Scenario --->  Validate the flight booking option with the valid data

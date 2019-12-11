@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extentreports>
+	<configuration>
+		<!-- report theme -->
+		<!-- standard, dark -->
+		<theme>standard</theme>
+
+		<!-- document encoding -->
+		<!-- defaults to UTF-8 -->
+		<encoding>UTF-8</encoding>
+
+		<!-- protocol for script and stylesheets -->
+		<!-- defaults to https -->
+		<protocol>http</protocol>
+
+		<!-- title of the document -->
+		<documentTitle>NewPORT - Cucumber Framework</documentTitle>
+
+		<!-- report name - displayed at top-nav -->
+		<reportName>NewPORT-CucumberReport</reportName>
+
+		<!-- global date format override -->
+		<!-- defaults to yyyy-MM-dd -->
+		<dateFormat>yyyy-MM-dd</dateFormat>
+
+		<!-- global time format override -->
+		<!-- defaults to HH:mm:ss -->
+		<timeFormat>HH:mm:ss</timeFormat>
+
+		<!-- custom javascript -->
+		<scripts>
+			<![CDATA[
+        $(document).ready(function() {
+    var gDossierObject = {};
+
+    gDossierObject.selectedTestCaseId = "";
+
+    gDossierObject.CONTAINER_HEIGHT = 418;
+    /*
+        400px - containerHeight + marginBottom(18)
+    */
+
+    gDossierObject.SCENARIO_HEADER_HEIGHT = 550;
+    /*
+        constant space over scenario's
+    */
+
+    window.setTimeout(function(){
+
+        $('.view-summary .linked').click(function(evt) {
+            var element,
+                testCaseId;
+
+            element = $(evt.target);
+            testCaseId = element.attr('test-id');
+
+            gDossierObject.selectedTestCaseId = parseInt(testCaseId, 10);
+        });
+
+        $(".side-nav a[view='test-view']").click(function() {
+            window.setTimeout(function(){
+                var numIndex,
+                    offsetHeight,
+                    selectedTestCaseNode;
+
+                if(gDossierObject.selectedTestCaseId){
+                    selectedTestCaseNode = $(".steps li[test-id='" + gDossierObject.selectedTestCaseId + "']");
+                    if(selectedTestCaseNode){
+                        numIndex = selectedTestCaseNode.index();
+                        if(numIndex >= 0){
+                            offsetHeight = gDossierObject.SCENARIO_HEADER_HEIGHT + (numIndex * gDossierObject.CONTAINER_HEIGHT);
+
+                            subViewRight = document.querySelector(".subview-right");
+                            subViewRight.scrollTo(0,0);
+                            subViewRight.scrollBy(0,offsetHeight);
+                        }
+
+                        gDossierObject.selectedTestCaseId = "";
+                    }
+                }
+
+            });
+        });
+    });
+});
+      ]]>
+		</scripts>
+
+		<!-- custom styles -->
+		<styles>
+			<![CDATA[
+        
+      ]]>
+		</styles>
+	</configuration>
+</extentreports>
